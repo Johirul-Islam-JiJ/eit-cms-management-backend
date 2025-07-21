@@ -1,0 +1,167 @@
+{
+    "website_name": "About Us",
+    "file_path": "upload/images/aboutUsWebSiteTemplate1",
+    "navbar": {
+      "brand": {
+        "name": "Workdear"
+      },
+      "links": [
+        "About Us",
+        "Affiliate",
+        "Partner",
+        "Help & Support",
+        "FAQ"
+      ],
+      "cta": {
+        "text": "Join Our Team",
+        "url": "path/to/join-team"
+      }
+    },
+    "sections_0001": {
+      "section_code":"section0001",
+      "title": "Meet the team that makes the magic happen",
+      "team_members": [
+        {
+          "name": "Emmy Rousom",
+          "role": "Founder & CEO",
+          "image_url": "path/to/emmy-image.jpg"
+        },
+        {
+          "name": "Iqbal Alam",
+          "role": "Founder & CDO",
+          "image_url": "path/to/iqbal-image.jpg"
+        },
+        {
+          "name": "Jassica Dobre",
+          "role": "Head of sells",
+          "image_url": "path/to/jassica-image.jpg"
+        },
+        {
+          "name": "Drew Cano",
+          "role": "Head of Marketing",
+          "image_url": "path/to/drew-image.jpg"
+        }
+      ],
+      "subtitle": "Masterminds To Your Positive Goal",
+      "description": "Experience a rise in your pursuits with our expert consulting. We excel in tailoring success strategies to your unique goals, covering diverse fields for maximum impact, professionally and delightfully.",
+      "cta": {
+        "text": "Join Our Team",
+        "url": "path/to/join-team"
+      }
+    },
+
+    "sections_0002":{
+      "section_code":"section0002",
+      "title": "Departments behind your Goal",
+      "departments": [
+        {
+          "name": "Meet the development team",
+          "description": "From code to launch, our Development Team transforms ideas into powerful, seamless digital experiences. They're the architects of innovation, ensuring every pixel performs with precision and speed. Whether it's building scalable systems or refining micro-features, this team turns challenges into clean, functional code.",
+          "image_url": "path/to/development-team-image.jpg"
+        },
+        {
+          "name": "The Storytellers Behind the Strategy",
+          "description": "Our Marketing Team doesn't just promote they connect. From crafting compelling campaigns to driving targeted growth, they turn data into direction and ideas into impact. With creativity in their hearts and strategy in their minds, they make sure the right message reaches the right audience at the right time.",
+          "image_url": "path/to/marketing-storytellers-image.jpg"
+        },
+        {
+          "name": "Meet the marketing team",
+          "description": "From code to launch, our Development Team transforms ideas into powerful, seamless digital experiences. They're the architects of innovation, ensuring every pixel performs with precision and speed. Whether it's building scalable systems or refining micro-features, this team turns challenges into clean, functional code.",
+          "image_url": "path/to/marketing-team-image.jpg"
+        },
+        {
+          "name": "The Guide Behind the Strategy",
+          "description": "Our Marketing Team doesn't just promote they connect. From crafting compelling campaigns to driving targeted growth, they turn data into direction and ideas into impact. With creativity in their hearts and strategy in their minds, they make sure the right message reaches the right audience at the right time.",
+          "image_url": "path/to/guide-strategy-image.jpg"
+        }
+      ]
+    },
+
+    "sections_0003":{
+      "section_code":"section0003",
+      "title": "Team culture",
+      "images": [
+        {
+          "image_url": "path/to/office1-image.jpg",
+          "description": "Collaborative office environment with team members working at desks."
+        },
+        {
+          "image_url": "path/to/teamwork-image.jpg",
+          "description": "Team members collaborating on a laptop in a modern office setting."
+        },
+        {
+          "image_url": "path/to/modern-office1-image.jpg",
+          "description": "Innovative office space with a sleek, curved architectural design."
+        },
+        {
+          "image_url": "path/to/office2-image.jpg",
+          "description": "Team working at computer stations in a bright office environment."
+        },
+        {
+          "image_url": "path/to/modern-office2-image.jpg",
+          "description": "Modern office with green chairs and an open, creative workspace."
+        }
+      ]
+    },
+
+    "sections_0004":{
+      "section_code":"section0004",
+      "title": "Blogs",
+      "posts": [
+        {
+          "title": "When we started this journey, the vision was simple empower people to work smarter, faster, and with freedom. Today, that vision lives through every micro job completed, every user connected, and Workdear",
+          "author": {
+            "name": "Alexa",
+            "role": "Founder and CEO",
+            "working": "Work Dear",
+            "image_url": "path/to/alexa-image.jpg"
+          }
+        },
+        {
+          "title": "When we started this journey, the vision was simple empower people to work smarter, faster, and with freedom. Today, that vision lives through every micro job completed, every user connected, and Workdear",
+          "author": {
+            "name": "Iqbal Alam",
+            "role": "Founder and CDO",
+            "working": "Work Dear",
+            "image_url": "path/to/iqbal-image1.jpg"
+          }
+        },
+        {
+          "title": "When we started this journey, the vision was simple empower people to work smarter, faster, and with freedom. Today, that vision lives through every micro job completed, every user connected, and Workdear",
+          "author": {
+            "name": "Iqbal Alam",
+            "role": "Head of marketing",
+            "working": "Work Dear",
+            "image_url": "path/to/iqbal-image2.jpg"
+          }
+        }
+      ]
+    },
+
+    "footer": {
+      "brand": {
+        "name": "Workdear",
+        "slogan": "Best Microjob & Freelance Site to Make Money Online",
+        "address": "Registered office Address: 71-75 Shelton Street, Covent Garden, London, United Kingdom"
+      },
+      "sections": {
+        "company": [
+          "About Us",
+          "Privacy Policy",
+          "Terms & Conditions"
+        ],
+        "service": [
+          "FAQ",
+          "Refund Policy",
+          "Cancellation Policy"
+        ],
+        "support": [
+          "Contact Us"
+        ]
+      },
+      "social": {
+        "facebook": "path/to/facebook-link",
+        "globe": "path/to/website-link"
+      }
+    }
+}

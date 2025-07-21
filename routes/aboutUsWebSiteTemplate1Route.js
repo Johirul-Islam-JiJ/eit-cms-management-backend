@@ -5,5 +5,6 @@ const aboutUsWebSiteTemplate1Controller = require('../controllers/aboutUsWebSite
 
 router.get('/', aboutUsWebSiteTemplate1Controller.index);
 router.post('/', authenticateToken, aboutUsWebSiteTemplate1Controller.store);
+router.get('/initialize', aboutUsWebSiteTemplate1Controller.initialize);
 
 module.exports = router;

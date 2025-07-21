@@ -24,4 +24,15 @@ const store = async (req, res) => {
   }
 };
 
-module.exports = { index, store };
+
+const initialize = async (req , res) => {
+  try {
+    await AboutUsWebSiteTemplate1.deleteMany({});
+    const data = await AboutUsWebSiteTemplate1.create(require('../json/AboutUs.json'));
+    res.status(201).json(data);
+  } catch (error) {
+    res.status(500).json({ message: 'Error initializing data', error: error.message });
+  }
+};
+
+module.exports = { index, store, initialize };
