@@ -1,0 +1,44 @@
+# Node.js dependencies
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment files
+.env
+.env.*  # optional, if you use env variants like .env.development
+
+# Logs
+logs/
+*.log
+
+# Build artifacts (if used)
+dist/
+build/
+
+# Uploaded files (optional)
+public/uploads/
+
+# Editor/IDE settings
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Configs (optional if auto-generated or sensitive)
+config/*.json
+
+# Coverage reports (if using test coverage tools like nyc or jest)
+coverage/
+
+# PM2 process files (if using pm2 for process management)
+pids/
+*.pid
+*.seed
+
+# Misc
+*.tgz
