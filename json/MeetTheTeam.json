@@ -17,7 +17,7 @@
         "url": "path/to/join-team"
       }
     },
-    "sections_0001": {
+    "section_0001": {
       "section_code":"section0001",
       "title": "Meet the team that makes the magic happen",
       "team_members": [
@@ -50,7 +50,7 @@
       }
     },
 
-    "sections_0002":{
+    "section_0002":{
       "section_code":"section0002",
       "title": "Departments behind your Goal",
       "departments": [
@@ -77,7 +77,7 @@
       ]
     },
 
-    "sections_0003":{
+    "section_0003":{
       "section_code":"section0003",
       "title": "Team culture",
       "images": [
@@ -104,7 +104,7 @@
       ]
     },
 
-    "sections_0004":{
+    "section_0004":{
       "section_code":"section0004",
       "title": "Blogs",
       "posts": [

@@ -59,42 +59,46 @@ const BlogSectionSchema = new mongoose.Schema({
   posts: [BlogPostSchema]
 });
 
+const NavbarSchema = new mongoose.Schema({
+  brand: {
+    name: String
+  },
+  links: [String],
+  cta: {
+    text: String,
+    url: String
+  }
+});
+
+const FooterSchema = new mongoose.Schema({
+  brand: {
+    name: String,
+    slogan: String,
+    address: String
+  },
+  sections: {
+    company: [String],
+    service: [String],
+    support: [String]
+  },
+  social: {
+    facebook: String,
+    globe: String
+  }
+});
+
 const WebsiteSchema = new mongoose.Schema({
   website_name: { type: String, required: true },
   file_path: { type: String, required: true },
 
-  navbar: {
-    brand: {
-      name: String
-    },
-    links: [String],
-    cta: {
-      text: String,
-      url: String
-    }
-  },
+  navbar: NavbarSchema,
 
-  sections_0001: CTASectionSchema,
-  sections_0002: DepartmentSectionSchema,
-  sections_0003: CultureSectionSchema,
-  sections_0004: BlogSectionSchema,
+  section_0001: CTASectionSchema,
+  section_0002: DepartmentSectionSchema,
+  section_0003: CultureSectionSchema,
+  section_0004: BlogSectionSchema,
 
-  footer: {
-    brand: {
-      name: String,
-      slogan: String,
-      address: String
-    },
-    sections: {
-      company: [String],
-      service: [String],
-      support: [String]
-    },
-    social: {
-      facebook: String,
-      globe: String
-    }
-  }
+  footer: FooterSchema
 });
 
 module.exports = mongoose.model('MeetTheTeam', WebsiteSchema);
