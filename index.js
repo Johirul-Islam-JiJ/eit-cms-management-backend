@@ -1,14 +1,12 @@
 // Dependencies
 const express = require('express');
 const mongoose = require('mongoose');
-const jwt = require('jsonwebtoken');
-const bcrypt = require('bcryptjs');
 const bodyParser = require('body-parser');
 const morgan = require('morgan');
 
 // Routes
 const userRouter = require('./routes/userRoute');
-const aboutUsWebSiteTemplate1Router = require('./routes/aboutUsWebSiteTemplate1Route');
+const meetTheTeamRouter = require('./routes/meetTheTeamRoute');
 // Middleware
 const logger = require('./middleware/logger');
 const authenticateToken = require('./middleware/auth');
@@ -40,7 +38,7 @@ app.use(morgan('dev')); // Logs request details (method, URL, status, etc.)
 // Routes
 app.get('/', (req, res) => res.send('Hello, Express!'));
 app.use('/users', userRouter);
-app.use('/aboutUsWebSiteTemplate1', aboutUsWebSiteTemplate1Router);
+app.use('/meetTheTeam', meetTheTeamRouter);
 
 
 

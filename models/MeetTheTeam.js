@@ -4,30 +4,30 @@ const TeamMemberSchema = new mongoose.Schema({
   name: String,
   role: String,
   image_url: String
-}, { _id: false });
+});
 
 const DepartmentSchema = new mongoose.Schema({
   name: String,
   description: String,
   image_url: String
-}, { _id: false });
+});
 
 const CultureImageSchema = new mongoose.Schema({
   image_url: String,
   description: String
-}, { _id: false });
+});
 
 const BlogAuthorSchema = new mongoose.Schema({
   name: String,
   role: String,
   working: String,
   image_url: String
-}, { _id: false });
+});
 
 const BlogPostSchema = new mongoose.Schema({
   title: String,
   author: BlogAuthorSchema
-}, { _id: false });
+});
 
 const CTASectionSchema = new mongoose.Schema({
   section_code: String,
@@ -39,25 +39,25 @@ const CTASectionSchema = new mongoose.Schema({
     text: String,
     url: String
   }
-}, { _id: false });
+});
 
 const DepartmentSectionSchema = new mongoose.Schema({
   section_code: String,
   title: String,
   departments: [DepartmentSchema]
-}, { _id: false });
+});
 
 const CultureSectionSchema = new mongoose.Schema({
   section_code: String,
   title: String,
   images: [CultureImageSchema]
-}, { _id: false });
+});
 
 const BlogSectionSchema = new mongoose.Schema({
   section_code: String,
   title: String,
   posts: [BlogPostSchema]
-}, { _id: false });
+});
 
 const WebsiteSchema = new mongoose.Schema({
   website_name: { type: String, required: true },
@@ -97,4 +97,4 @@ const WebsiteSchema = new mongoose.Schema({
   }
 });
 
-module.exports = mongoose.model('AboutUsWebSiteTemplate1', WebsiteSchema);
+module.exports = mongoose.model('MeetTheTeam', WebsiteSchema);
