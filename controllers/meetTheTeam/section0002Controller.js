@@ -59,7 +59,8 @@ const addDepartment = async (req, res) => {
     }
 
     // Upload image
-    const fileName = String(req.params.id);
+    const timestamp = Date.now(); // Current time in milliseconds
+    const fileName = `${req.params.id}_${timestamp}`;
     const savedPath = uploadImage(image, fileName, imagePath);
     const image_url = savedPath;
 

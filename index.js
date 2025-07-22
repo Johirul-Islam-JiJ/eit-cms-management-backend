@@ -46,7 +46,7 @@ mongoose.connect(mongoURI, {
 //* ------------------------- ----------------------- ------------------------ */
 // Middleware
 app.use(fileUpload());
-//app.use(express.json());
+app.use(express.json());
 app.use(logger);
 app.use(bodyParser.json());
 app.use(morgan('dev')); // Logs request details (method, URL, status, etc.)
