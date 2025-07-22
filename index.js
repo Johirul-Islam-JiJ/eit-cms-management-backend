@@ -1,4 +1,14 @@
-// Dependencies
+//* Global path --------------------- ------------------------------ --------------------- */
+const moduleAlias = require('module-alias');
+const path = require('path');
+moduleAlias.addAliases({
+  '@models': path.join(__dirname, 'models'),
+  '@controllers': path.join(__dirname, 'controllers'),
+  '@middleware': path.join(__dirname, 'middleware'),
+  '@routes': path.join(__dirname, 'routes'),
+});
+
+//* Dependencies -----------------------------------------------------------------
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
@@ -10,6 +20,9 @@ const meetTheTeamRouter = require('./routes/meetTheTeamRoute');
 // Middleware
 const logger = require('./middleware/logger');
 const authenticateToken = require('./middleware/auth');
+
+
+
 
 //* ------------------------- ----------------------- ------------------------ */
 const app = express();
@@ -36,7 +49,10 @@ app.use(bodyParser.json());
 app.use(morgan('dev')); // Logs request details (method, URL, status, etc.)
 //* ------------------------- ----------------------- --------------------------------------------------------------------------------
 // Routes
-app.get('/', (req, res) => res.send('Hello, Express!'));
+app.get('/', (req, res) => {
+  console.log(__dirname);
+  res.send('Hello, Express!: ' + __dirname);
+});
 app.use('/users', userRouter);
 app.use('/meetTheTeam', meetTheTeamRouter);
 

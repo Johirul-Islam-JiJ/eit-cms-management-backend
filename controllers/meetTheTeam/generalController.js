@@ -1,4 +1,8 @@
-const meetTheTeam = require('../../models/MeetTheTeam');
+//const meetTheTeam = require('../../models/MeetTheTeam');
+const path = require('path');
+const meetTheTeam = require('@models/MeetTheTeam');
+
+
 const { body, query, param, validationResult } = require('express-validator');
 
 const index = async (req, res) => {
@@ -18,7 +22,7 @@ const index = async (req, res) => {
 const initialize = async (req , res) => {
   try {
     await meetTheTeam.deleteMany({});
-    const data = await meetTheTeam.create(require('../json/MeetTheTeam.json'));
+    const data = await meetTheTeam.create(require('../../json/MeetTheTeam.json'));
     res.status(201).json(data);
   } catch (error) {
     res.status(500).json({ message: 'Error initializing data', error: error.message });
