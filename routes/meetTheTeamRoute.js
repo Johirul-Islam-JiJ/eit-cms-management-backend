@@ -5,7 +5,7 @@ const general = require('@controllers/meetTheTeam/generalController');
 const navbar = require('@controllers/meetTheTeam/navbarController');
 const section0001 = require('@controllers/meetTheTeam/section0001Controller');
 const section0002 = require('@controllers/meetTheTeam/section0002Controller');
-// const section0003 = require('@controllers/meetTheTeam/section0003Controller');
+const section0003 = require('@controllers/meetTheTeam/section0003Controller');
 // const section0004 = require('@controllers/meetTheTeam/section0004Controller');
 
 
@@ -36,6 +36,12 @@ router.get('/section0002/:id', section0002.getDepartmentSection);
 router.put('/section0002/:id/department-title', section0002.updateDepartmentTitle);
 router.post('/section0002/:id/add-department', section0002.addDepartment);
 router.delete('/section0002/:id/remove-department', section0002.removeDepartment);
+
+
+router.get('/section0003/:id', section0003.getSection);
+router.put('/section0003/:id/updateSectionTitle', section0003.updateSectionTitle);
+router.post('/section0003/:id/addImage', section0003.addImage);
+router.delete('/section0003/:id/removeImage', section0003.removeImage);
 
 
 
