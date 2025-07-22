@@ -146,17 +146,19 @@
       },
       "sections": {
         "company": [
-          "About Us",
-          "Privacy Policy",
-          "Terms & Conditions"
+          { "name": "FAQ", "link": "www.example.com" },
+          { "name": "Refund Policy", "link": "www.example.com" },
+          { "name": "Cancellation Policy", "link": "www.example.com" }
         ],
         "service": [
-          "FAQ",
-          "Refund Policy",
-          "Cancellation Policy"
+          { "name": "About Us", "link": "www.example.com" },
+          { "name": "Privacy Policy", "link": "www.example.com" },
+          { "name": "Terms & Conditions", "link": "www.example.com" }
         ],
         "support": [
-          "Contact Us"
+          { "name": "FAQ", "link": "www.example.com" },
+          { "name": "Refund Policy", "link": "www.example.com" },
+          { "name": "Cancellation Policy", "link": "www.example.com" }
         ]
       },
       "social": {

@@ -6,7 +6,8 @@ const navbar = require('@controllers/meetTheTeam/navbarController');
 const section0001 = require('@controllers/meetTheTeam/section0001Controller');
 const section0002 = require('@controllers/meetTheTeam/section0002Controller');
 const section0003 = require('@controllers/meetTheTeam/section0003Controller');
-// const section0004 = require('@controllers/meetTheTeam/section0004Controller');
+const section0004 = require('@controllers/meetTheTeam/section0004Controller');
+const footer = require('@controllers/meetTheTeam/footerController');
 
 
 const { body, param } = require('express-validator');
@@ -44,6 +45,15 @@ router.post('/section0003/:id/addImage', section0003.addImage);
 router.delete('/section0003/:id/removeImage', section0003.removeImage);
 
 
+router.get('/section0004/:id', section0004.getSection);
+router.put('/section0004/:id/updateSectionTitle', section0004.updateSectionTitle);
+router.post('/section0004/:id/addBlogPost', section0004.addBlogPost);
+router.delete('/section0004/:id/removeBlogPost', section0004.removeBlogPost);
 
+
+router.get('/footer/:id', footer.getFooter);
+router.put('/footer/:id/updateBrand', footer.updateBrand);
+router.put('/footer/:id/updateSections', footer.updateSections);
+router.put('/footer/:id/updateSocialLinks', footer.updateSocialLinks);
 
 module.exports = router;

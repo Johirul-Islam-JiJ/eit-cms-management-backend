@@ -70,6 +70,11 @@ const NavbarSchema = new mongoose.Schema({
   }
 });
 
+const FooterSection = new mongoose.Schema({
+  name: String,
+  link: String
+});
+
 const FooterSchema = new mongoose.Schema({
   brand: {
     name: String,
@@ -77,9 +82,9 @@ const FooterSchema = new mongoose.Schema({
     address: String
   },
   sections: {
-    company: [String],
-    service: [String],
-    support: [String]
+    company: [FooterSection],
+    service: [FooterSection],
+    support: [FooterSection]
   },
   social: {
     facebook: String,
