@@ -6,6 +6,8 @@ moduleAlias.addAliases({
   '@controllers': path.join(__dirname, 'controllers'),
   '@middleware': path.join(__dirname, 'middleware'),
   '@routes': path.join(__dirname, 'routes'),
+  '@helpers': path.join(__dirname, 'helpers'),
+  '@imageHandler': path.join(__dirname, 'helpers/imageHandler'),
 });
 
 //* Dependencies -----------------------------------------------------------------
@@ -13,6 +15,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const morgan = require('morgan');
+const fileUpload = require('express-fileupload');
 
 // Routes
 const userRouter = require('./routes/userRoute');
@@ -42,8 +45,8 @@ mongoose.connect(mongoURI, {
 
 //* ------------------------- ----------------------- ------------------------ */
 // Middleware
-
-app.use(express.json());
+app.use(fileUpload());
+//app.use(express.json());
 app.use(logger);
 app.use(bodyParser.json());
 app.use(morgan('dev')); // Logs request details (method, URL, status, etc.)
