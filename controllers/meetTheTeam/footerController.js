@@ -72,32 +72,89 @@ const updateBrand = async (req, res) => {
 };
 
 // Update sections
-const updateSections = async (req, res) => {
+const addLinkToSection = async (req, res) => {
   try {
-    const { company, service, support } = req.body;
-    if (!company || !service || !support) {
-      return res.status(400).json({ message: 'Company, service, and support sections are required' });
+    const { section, name, link } = req.body;
+    
+    // --- Validation ---
+    if (!section || !name || !link) {
+      return res.status(400).json({ message: 'Fields "section", "name", and "link" are required.' });
     }
 
-    const updatedData = await meetTheTeam.findOneAndUpdate(
+    const validSections = ['company', 'service', 'support'];
+    if (!validSections.includes(section)) {
+      return res.status(400).json({ message: 'Section must be one of: company, service, support.' });
+    }
+    
+    // --- Database Operation ---
+    // Dynamically create the path for the update
+    const updatePath = `footer.sections.${section}`;
+    
+    const updatedSettings = await meetTheTeam.findOneAndUpdate(
       { 'footer._id': req.params.id },
       { 
-        $set: { 
-          'footer.sections.company': company,
-          'footer.sections.service': service,
-          'footer.sections.support': support
+        $push: { 
+          [updatePath]: { name, link } 
         } 
+      },
+      { new: true, runValidators: true } // `new: true` returns the modified document
+    );
+
+    if (!updatedSettings) {
+      return res.status(404).json({ message: 'Document not found with that ID.' });
+    }
+
+    res.status(200).json({
+        message: `Successfully added link to '${section}' section.`,
+        footer: updatedSettings.footer
+    });
+
+  } catch (error) {
+    console.error('Error adding link:', error);
+    res.status(500).json({ message: 'Error adding link to section.', error: error.message });
+  }
+};
+
+const removeLinkFromSection = async (req, res) => {
+  try {
+    const { section, itemId } = req.body;
+    const { id } = req.params; // This is expected to be footer._id
+
+    // --- Validation ---
+    if (!section || !itemId) {
+      return res.status(400).json({ message: 'Fields "section" and "itemId" are required.' });
+    }
+
+    const validSections = ['company', 'service', 'support'];
+    if (!validSections.includes(section)) {
+      return res.status(400).json({ message: 'Section must be one of: company, service, support.' });
+    }
+
+    // --- Database Operation ---
+    const updatePath = `footer.sections.${section}`;
+
+    const updatedSettings = await meetTheTeam.findOneAndUpdate(
+      { 'footer._id': id },
+      {
+        $pull: {
+          [updatePath]: { _id: itemId }
+        }
       },
       { new: true }
     );
 
-    if (!updatedData) {
-      return res.status(404).json({ message: 'Footer not found' });
+    if (!updatedSettings) {
+      return res.status(404).json({ message: 'Document not found with that footer._id.' });
     }
 
-    res.json(updatedData.footer);
+    res.status(200).json({
+      message: `Successfully removed link from '${section}' section.`,
+      footer: updatedSettings.footer
+    });
+
   } catch (error) {
-    res.status(500).json({ message: 'Error updating sections', error: error.message });
+    console.error('Error removing link:', error);
+    res.status(500).json({ message: 'Error removing link from section.', error: error.message });
   }
 };
 
@@ -128,6 +185,7 @@ const updateSocialLinks = async (req, res) => {
 module.exports = {
   getFooter,
   updateBrand,
-  updateSections,
+  addLinkToSection,
+  removeLinkFromSection,
   updateSocialLinks,
 };

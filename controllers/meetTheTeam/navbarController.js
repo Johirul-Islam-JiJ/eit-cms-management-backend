@@ -65,14 +65,15 @@ const updateCta = async (req, res) => {
 // Add link
 const addLink = async (req, res) => {
   try {
-    const { link } = req.body;
-    if (!link) {
-      return res.status(400).json({ message: 'Link is required' });
+    const { name , href } = req.body;
+    if (!name || !href) {
+      return res.status(400).json({ message: 'Name and href are required' });
     }
+      
 
     const data = await meetTheTeam.findOneAndUpdate(
       { 'navbar._id': req.params.id },
-      { $push: { 'navbar.links': link } },
+      { $push: { 'navbar.links': { name, href } } },
       { new: true }
     );
 
@@ -89,14 +90,15 @@ const addLink = async (req, res) => {
 // Remove link
 const removeLink = async (req, res) => {
   try {
-    const { link } = req.body;
-    if (!link) {
-      return res.status(400).json({ message: 'Link is required' });
+    const { linkId } = req.body;
+
+    if (!linkId) {
+      return res.status(400).json({ message: 'Link ID is required' });
     }
 
     const data = await meetTheTeam.findOneAndUpdate(
       { 'navbar._id': req.params.id },
-      { $pull: { 'navbar.links': link } },
+      { $pull: { 'navbar.links': { _id: linkId } } },
       { new: true }
     );
 
@@ -109,5 +111,6 @@ const removeLink = async (req, res) => {
     res.status(500).json({ message: 'Error removing link', error: error.message });
   }
 };
+
 
 module.exports = { navbar, updateBrandName, updateCta, addLink, removeLink };

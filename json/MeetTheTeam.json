@@ -6,12 +6,12 @@
         "name": "Workdear"
       },
       "links": [
-        "About Us",
-        "Affiliate",
-        "Partner",
-        "Help & Support",
-        "FAQ"
-      ],
+                { "name": "About Us", "href": "/about-us" },
+                { "name": "Affiliate", "href": "/affiliate" },
+                { "name": "Partner", "href": "/partner" },
+                { "name": "Help & Support", "href": "/help-support" },
+                { "name": "FAQ", "href": "/faq" }
+              ],
       "cta": {
         "text": "Join Our Team",
         "url": "path/to/join-team"

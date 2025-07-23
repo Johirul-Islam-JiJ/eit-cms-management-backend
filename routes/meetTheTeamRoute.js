@@ -53,7 +53,8 @@ router.delete('/section0004/:id/removeBlogPost', section0004.removeBlogPost);
 
 router.get('/footer/:id', footer.getFooter);
 router.put('/footer/:id/updateBrand', footer.updateBrand);
-router.put('/footer/:id/updateSections', footer.updateSections);
+router.put('/footer/:id/addLinkToSection', footer.addLinkToSection);
+router.put('/footer/:id/removeLinkFromSection', footer.removeLinkFromSection);
 router.put('/footer/:id/updateSocialLinks', footer.updateSocialLinks);
 
 module.exports = router;

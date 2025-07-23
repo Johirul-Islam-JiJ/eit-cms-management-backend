@@ -58,21 +58,24 @@ const BlogSectionSchema = new mongoose.Schema({
   title: String,
   posts: [BlogPostSchema]
 });
-
+const NavbarLinkSchema = new mongoose.Schema({
+  name: String,
+  href: String
+});
 const NavbarSchema = new mongoose.Schema({
   brand: {
     name: String
   },
-  links: [String],
+  links: [NavbarLinkSchema],
   cta: {
     text: String,
     url: String
   }
 });
 
-const FooterSection = new mongoose.Schema({
-  name: String,
-  link: String
+const FooterSectionSchema = new mongoose.Schema({
+  name: { type: String, required: true },
+  link: { type: String, required: true }
 });
 
 const FooterSchema = new mongoose.Schema({
@@ -82,9 +85,9 @@ const FooterSchema = new mongoose.Schema({
     address: String
   },
   sections: {
-    company: [FooterSection],
-    service: [FooterSection],
-    support: [FooterSection]
+    company: [FooterSectionSchema],
+    service: [FooterSectionSchema],
+    support: [FooterSectionSchema]
   },
   social: {
     facebook: String,

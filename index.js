@@ -35,7 +35,7 @@ const JWT_SECRET = 'your-secret-key'; // Store in environment variable in produc
 
 //* ------------------------- ----------------------- ------------------------ */
 // Connect to MongoDB
-const mongoURI = 'mongodb://localhost:27017/cms';
+const mongoURI = 'mongodb+srv://abusufiun27:ask12345678@cluster0.zkaupng.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0/cms';
 mongoose.connect(mongoURI, {
   useNewUrlParser: true,
   useUnifiedTopology: true
