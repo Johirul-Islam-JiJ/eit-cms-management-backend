@@ -35,13 +35,27 @@ const JWT_SECRET = 'your-secret-key'; // Store in environment variable in produc
 
 //* ------------------------- ----------------------- ------------------------ */
 // Connect to MongoDB
-const mongoURI = 'mongodb+srv://abusufiun27:ask12345678@cluster0.zkaupng.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0/cms';
-mongoose.connect(mongoURI, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true
-})
-  .then(() => console.log('✅ MongoDB Connected'))
-  .catch(err => console.error('❌ MongoDB connection error:', err));
+const mongoURI = 'mongodb+srv://abusufiun27:ask12345678@cluster0.zkaupng.mongodb.net/cms?retryWrites=true&w=majority&appName=Cluster0';
+async function startServer() {
+  try {
+    await mongoose.connect(mongoURI, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    });
+    console.log('✅ MongoDB Connected');
+
+    app.listen(PORT, () => {
+      console.log(`🚀 Server is running on http://localhost:${PORT}`);
+    });
+
+  } catch (err) {
+    console.error('❌ MongoDB connection error:', err);
+    process.exit(1);
+  }
+}
+
+startServer();
+
 
 //* ------------------------- ----------------------- ------------------------ */
 // Middleware
